@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.ViewModel
 {
-    public class mainViewmodel
+    public class MainViewModel:BaseViewModel
     {
     }
 }

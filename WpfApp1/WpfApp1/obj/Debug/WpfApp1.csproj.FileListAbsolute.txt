@@ -15,3 +15,12 @@ C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug
 C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
 C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\bin\Debug\EntityFramework.dll
+C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\bin\Debug\EntityFramework.xml
+C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\WpfApp1_Content.g.cs
+C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
+C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\Dictionaries\LoginDictionary.baml
+C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\App.baml

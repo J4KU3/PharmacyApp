@@ -4,14 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
+        xmlns:VM ="clr-namespace:WpfApp1.ViewModel"
         mc:Ignorable="d"
         Title="LoginView" Height="475.19" Width="349.172">
+    <Window.DataContext>
+        <VM:LoginViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
+    </Window.Visibility>
+
+
+
     <Grid Background="#FF9A9898">
-        <TextBox HorizontalAlignment="Left" Height="63" Margin="72,118,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="187"/>
-        <TextBox HorizontalAlignment="Left" Height="63" Margin="72,229,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="187
-                 "/>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="72,87,0,0" VerticalAlignment="Top"/>
-        <Label Content="Hasło" HorizontalAlignment="Left" Margin="71,198,0,0" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox Tag="Login" Style="{StaticResource LoginTextBoxStyle}" Grid.Row="1" Height="62" Margin="12,27,9.667,0" TextWrapping="Wrap" Text="{Binding LoginUser.UserName}" VerticalAlignment="Top"/>
+        <TextBox Tag="Password" Style="{StaticResource LoginTextBoxStyle}" Grid.Row="2" Height="62" Margin="10,21.667,9.667,0" TextWrapping="Wrap" Text="{Binding LoginUser.UserPassword}" VerticalAlignment="Top"/>
+
+        <Label Grid.Row="0" Content="PharmacyApp" Margin="18,10,9.667,10" FontFamily="Showcard Gothic" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Grid.Row="3" Style="{StaticResource LoginButtonStyle}" Content="Zaloguj" Margin="81,0,82.667,10" Height="50" VerticalAlignment="Bottom" Command="{Binding loginCommand}"/>
 
     </Grid>
 </Window>
