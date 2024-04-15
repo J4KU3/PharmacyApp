@@ -15,7 +15,8 @@ namespace WpfApp1
     /// </summary>
     public partial class App : Application
     {
-        
+
+
         protected void ApplicationStart(object sender, StartupEventArgs args)
         {
             var loginView = new LoginView();
@@ -30,10 +31,10 @@ namespace WpfApp1
                 }
             };
 
-          
+
 
 
         }
-      
+
     }
 }

@@ -10,15 +10,15 @@ namespace WpfApp1.Commands
 {
     public class CloseWindowCommand : BaseCommand
     {
-        private readonly MainView _window;
+        private readonly MainViewModel _mainViewModel;
 
-        public CloseWindowCommand(MainView window)
+        public CloseWindowCommand(MainViewModel mainViewModel)
         {
-            _window = window;
+            _mainViewModel = mainViewModel;
         }
         public override void Execute(object parameter)
         {
-            _window.Close();
+            App.Current.Shutdown();
         }
     }
 }

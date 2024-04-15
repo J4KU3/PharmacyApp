@@ -23,15 +23,10 @@ namespace WpfApp1.Commands
         
         public override void Execute(object parameter)
         {
-            var mainView = new MainView();
-            var loginView = new LoginView();
-            _mainviewModel.closeWindowCommand.Execute(1);
-
-            _loginViewModel.IsViewVisible = true;
-
-
-
-
+          
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
+            
         }
     }
 }

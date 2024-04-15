@@ -8,6 +8,7 @@
         xmlns:VM ="clr-namespace:WpfApp1.ViewModel"
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800">
+
     <Window.DataContext>
         <VM:MainViewModel/>
     </Window.DataContext>
@@ -17,9 +18,10 @@
             <ColumnDefinition Width="606*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Margin="0,0,0.333,-0.333">
-            <Button Content="Admin" Margin="10,62,10,0" VerticalAlignment="Top" Command="{Binding navigationCommand}" CommandParameter="1" Height="43"/>
-            <Button Content="MainPanel" Margin="10,110,10,0" VerticalAlignment="Top" Height="51" Command="{Binding navigationCommand}" CommandParameter="2"/>
-            <Button Content="Logout" Margin="10,365,10,0" VerticalAlignment="Top" Height="46" Command="{Binding logoutCommand}"/>
+            <Button Content="Admin" Margin="10,77,10,0" VerticalAlignment="Top" Command="{Binding navigationCommand}" CommandParameter="1" Height="43"/>
+            <Button Content="MainPanel" Margin="10,125,10,0" VerticalAlignment="Top" Height="51" Command="{Binding navigationCommand}" CommandParameter="2"/>
+            <Button Content="Logout" Margin="9,314,11,0" VerticalAlignment="Top" Height="46" Command="{Binding logoutCommand}"/>
+            <Button Content="ShutDown" Margin="9,365,10,0" VerticalAlignment="Top" Height="46" Command="{Binding closeWindowCommand}"/>
 
         </Grid>
         <Grid Grid.Column="1" Grid.ColumnSpan="1" Margin="7.667,0,0.333,-0.333">

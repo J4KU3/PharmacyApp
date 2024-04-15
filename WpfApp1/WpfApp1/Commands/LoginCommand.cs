@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using WpfApp1.Data;
+using WpfApp1.View;
 using WpfApp1.ViewModel;
 
 namespace WpfApp1.Commands
@@ -12,10 +13,12 @@ namespace WpfApp1.Commands
     public class LoginCommand : BaseCommand
     {
         private readonly LoginViewModel _loginViewModel;
+       
         
         public LoginCommand(LoginViewModel loginViewModel)
         {
             _loginViewModel = loginViewModel;
+           
         }
         public override bool CanExecute(object parameter)
         {
@@ -23,6 +26,7 @@ namespace WpfApp1.Commands
         }
         public override void Execute(object parameter)
         {
+            
             if (_loginViewModel.LoginUser.UserName != null && _loginViewModel.LoginUser.UserPassword != null)
             {
 

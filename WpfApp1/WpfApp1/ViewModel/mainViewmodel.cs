@@ -41,9 +41,10 @@ namespace WpfApp1.ViewModel
         //Construktor 
         public MainViewModel()
         {
+            CurrentView = new MainAppPanelViewModel();
             loginViewModel = new LoginViewModel();
             navigationCommand = new NavigationCommand(this);
-            closeWindowCommand = new CloseWindowCommand(Application.Current.Windows.OfType<MainView>().FirstOrDefault());
+            closeWindowCommand = new CloseWindowCommand(this);
             logoutCommand = new LogoutCommand(loginViewModel,this);
         }
 
