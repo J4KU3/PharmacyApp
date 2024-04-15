@@ -41,7 +41,7 @@ namespace WpfApp1.Commands
                         _loginViewModel.IsViewVisible = true;
                         MessageBox.Show("zostały podane błędne dane");
                     }
-
+                   
                 }
             }
 

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace WpfApp1.View
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy MainAppPanelView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainAppPanelView : UserControl
     {
-        public MainWindow()
+        public MainAppPanelView()
         {
             InitializeComponent();
         }
