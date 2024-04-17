@@ -38,6 +38,7 @@
     <Property Name="FName" Type="varchar" MaxLength="50" />
     <Property Name="LName" Type="varchar" MaxLength="50" />
     <Property Name="PhoneNumer" Type="varchar" MaxLength="50" />
+    <Property Name="IsAdmin" Type="bit" />
   </EntityType>
   <Association Name="FK_Product_Category">
     <End Role="Category" Type="Self.Category" Multiplicity="1" />

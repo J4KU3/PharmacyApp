@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PharmacyAppDataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PharmacyAppDataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="category_id" />
@@ -43,6 +43,7 @@
           <Property Name="FName" Type="varchar" MaxLength="50" />
           <Property Name="LName" Type="varchar" MaxLength="50" />
           <Property Name="PhoneNumer" Type="varchar" MaxLength="50" />
+          <Property Name="IsAdmin" Type="bit" />
         </EntityType>
         <Association Name="FK_Product_Category">
           <End Role="Category" Type="Self.Category" Multiplicity="1" />
@@ -66,8 +67,7 @@
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PharmacyAppDataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -111,6 +111,7 @@
           <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PhoneNumer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsAdmin" Type="Boolean" />
         </EntityType>
         <Association Name="FK_Product_Category">
           <End Role="Category" Type="Self.Category" Multiplicity="1" />
@@ -174,6 +175,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="PharmacyAppDataBaseModel.Users">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
                 <ScalarProperty Name="IDUser" ColumnName="IDUser" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />

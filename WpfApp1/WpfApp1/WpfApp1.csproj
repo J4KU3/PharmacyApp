@@ -86,6 +86,8 @@
     <Compile Include="Commands\LoadUsers.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\LogoutCommand.cs" />
+    <Compile Include="Commands\MainAppCommands\ClearCommand.cs" />
+    <Compile Include="Commands\MainAppCommands\ShowNumberCommand.cs" />
     <Compile Include="Commands\Navigations\NavigationCommand.cs" />
     <Compile Include="Data\Category.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -192,6 +194,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Commands\AdminPanelCommands\" />
     <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>

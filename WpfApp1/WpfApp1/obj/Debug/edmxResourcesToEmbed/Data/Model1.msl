@@ -35,6 +35,7 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="PharmacyAppDataBaseModel.Users">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
           <ScalarProperty Name="IDUser" ColumnName="IDUser" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />

@@ -20,5 +20,6 @@ namespace WpfApp1.Data
         public string FName { get; set; }
         public string LName { get; set; }
         public string PhoneNumer { get; set; }
+        public Nullable<bool> IsAdmin { get; set; }
     }
 }
