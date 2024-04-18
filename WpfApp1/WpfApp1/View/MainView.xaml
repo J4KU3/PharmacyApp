@@ -23,6 +23,7 @@
             <Button Content="Logout" Margin="9,314,11,0" VerticalAlignment="Top" Height="46" Command="{Binding logoutCommand}"/>
             <Button Content="ShutDown" Margin="9,365,10,0" VerticalAlignment="Top" Height="46" Command="{Binding closeWindowCommand}"/>
             <Button Content="Find Product" Margin="10,181,11,0" VerticalAlignment="Top" Height="46"/>
+            <Button Content="Home" Margin="10,29,9,0" VerticalAlignment="Top" Command="{Binding navigationCommand}" CommandParameter="1" Height="43"/>
 
         </Grid>
         <Grid Grid.Column="1" Grid.ColumnSpan="1" Margin="7.667,0,0.333,-0.333">

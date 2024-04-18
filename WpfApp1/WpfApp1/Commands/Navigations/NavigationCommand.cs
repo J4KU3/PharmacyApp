@@ -20,7 +20,6 @@ namespace WpfApp1.Commands.Navigations
         public override void Execute(object parameter)
         {
             
-            // App.Current.Shutdown();
 
             switch (parameter as string)
             {
