@@ -4,9 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1.View"
+             xmlns:VM ="clr-namespace:WpfApp1.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.DataContext>
+        <VM:AdminPanelViewModel/>
+    </UserControl.DataContext>
     <Grid Background="AliceBlue">
-        <Label Content="Admin Panel" FontSize="30" Margin="217,139,149,152"/>
+        <Label Content="Admin Panel" FontSize="30" Margin="66,84,300,207"/>
+        <Image Source="{Binding ProductToShow.product_img}" HorizontalAlignment="Left" Height="290" Margin="420,114,0,0" VerticalAlignment="Top" Width="269"/>
+        <TextBlock HorizontalAlignment="Left" Margin="189,343,0,0" TextWrapping="Wrap" Text="{Binding ProductToShow.product_name}" VerticalAlignment="Top"/>
+
     </Grid>
 </UserControl>

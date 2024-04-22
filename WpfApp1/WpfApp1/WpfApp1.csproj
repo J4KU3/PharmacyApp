@@ -88,7 +88,6 @@
     <Compile Include="Commands\LogoutCommand.cs" />
     <Compile Include="Commands\MainAppCommands\ClearCommand.cs" />
     <Compile Include="Commands\MainAppCommands\ClearOneCommand.cs" />
-    <Compile Include="Commands\MainAppCommands\LoadProductsFromDataBase.cs" />
     <Compile Include="Commands\MainAppCommands\ShowNumberCommand.cs" />
     <Compile Include="Commands\Navigations\NavigationCommand.cs" />
     <Compile Include="Data\Category.cs">

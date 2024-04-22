@@ -45,7 +45,7 @@ namespace WpfApp1.ViewModel
             loginViewModel = new LoginViewModel();
             navigationCommand = new NavigationCommand(this);
             closeWindowCommand = new CloseWindowCommand(this);
-            logoutCommand = new LogoutCommand(loginViewModel,this);
+            logoutCommand = new LogoutCommand(this);
         }
 
 

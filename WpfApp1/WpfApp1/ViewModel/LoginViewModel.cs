@@ -78,7 +78,6 @@ namespace WpfApp1.ViewModel
             loadUsersFromData = new LoadUsers(this);
             loadUsersFromData.Execute(0);
             _user = new Users();
-            logoutCommand = new LogoutCommand(this,_mainviewModel);
             
         }
     }

@@ -12,12 +12,10 @@ namespace WpfApp1.Commands
     public class LogoutCommand : BaseCommand
     {
         private readonly MainViewModel _mainviewModel;
-        private readonly LoginViewModel _loginViewModel;
 
-        public LogoutCommand(LoginViewModel loginViewModel, MainViewModel mainViewModel)
+        public LogoutCommand(MainViewModel mainViewModel)
         {
-            _loginViewModel = loginViewModel;
-            _mainviewModel = mainViewModel;
+            _mainviewModel = mainViewModel;   
         }
         
         

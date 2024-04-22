@@ -7,18 +7,22 @@ using WpfApp1.Commands.Navigations;
 using WpfApp1.Commands.MainAppCommands;
 using System.Collections.ObjectModel;
 using WpfApp1.Data;
+using GalaSoft.MvvmLight.Command;
+using System.Windows.Input;
 
 namespace WpfApp1.ViewModel
 {
     public class MainAppPanelViewModel : BaseViewModel
     {
+        
+        
         //Commands
         public ShowNumberCommand showNumberCommand { get; }
         public ClearCommand clearCommand { get; }
-        public LoadProductsFromDataBase loadProductsFromDataBase {get;}
+        
         public ClearOneCommand clearOneCommand { get; }
         //Properties
-        private string _screenValue;
+        
 
         //lists
         private ObservableCollection<Product> _listOfProducts = new ObservableCollection<Product>();
@@ -32,10 +36,11 @@ namespace WpfApp1.ViewModel
             set
             {
                 _listOfProducts = value;
-                 loadProductsFromDataBase.OnCanExecuteChanged();
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(ListOfProducts));
+
             }
         }
+        private string _screenValue;
         public string ScreenValue
         {
             get
@@ -52,15 +57,25 @@ namespace WpfApp1.ViewModel
             }
         }
 
+        public ICommand LoadProductsCommand => new RelayCommand(LoadProducts);
 
+        private void LoadProducts()
+        {
+            using (var context = new PharmacyAppDataBaseEntities())
+            {
+                ListOfProducts = new ObservableCollection<Product>(context.Product.ToList());
+            }
+        }
         public MainAppPanelViewModel()
         {
+           
             showNumberCommand = new ShowNumberCommand(this);
             clearCommand = new ClearCommand(this);
             clearOneCommand = new ClearOneCommand(this);
-            loadProductsFromDataBase = new LoadProductsFromDataBase(this);
+            LoadProductsCommand.Execute(0);
+
         }
 
-       
+
     }
 }

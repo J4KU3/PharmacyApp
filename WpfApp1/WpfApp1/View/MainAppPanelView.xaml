@@ -21,7 +21,7 @@
                 <RowDefinition Height="13*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <TextBox Margin="0,10,52,9.667" TextWrapping="Wrap" Text="{Binding ScreenValue}"/>
+                <TextBox Margin="0,10,10,9.667" TextWrapping="Wrap" Text="{Binding ScreenValue}"/>
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
