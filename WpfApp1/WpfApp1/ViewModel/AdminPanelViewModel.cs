@@ -30,21 +30,6 @@ namespace WpfApp1.ViewModel
                 OnPropertyChanged(nameof(ListOfProducts));
             }
         }
-        private Product _productToShow;
-        public Product ProductToShow
-        {
-            get
-            {
-                return _productToShow;
-            }
-            set
-            {
-                _productToShow = value;
-                OnPropertyChanged();
-            }
-        }
-       
-
         private void LoadProducts()
         {
             using (var context = new PharmacyAppDataBaseEntities())
@@ -57,12 +42,9 @@ namespace WpfApp1.ViewModel
         public RelayCommand LoadProductsCommand { get; private set; }
         public AdminPanelViewModel()
         {
-            _productToShow = new Product();
             LoadProductsCommand = new RelayCommand(LoadProducts);
             LoadProducts();
-            var productwithimg = ListOfProducts.FirstOrDefault(x=>x.product_id==2);
-            _productToShow.product_name = productwithimg.product_name;
-            _productToShow.product_img = productwithimg.product_img;
+           
             
         }
     }

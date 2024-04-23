@@ -19,10 +19,53 @@ namespace WpfApp1.ViewModel
         //Commands
         public ShowNumberCommand showNumberCommand { get; }
         public ClearCommand clearCommand { get; }
+        public AddToListCommand addToListCommand { get; }
         
         public ClearOneCommand clearOneCommand { get; }
         //Properties
-        
+        private string _screenValue;
+        public string ScreenValue
+        {
+            get
+            {
+                return _screenValue;
+            }
+            set
+            {
+                _screenValue = value;
+                showNumberCommand.OnCanExecuteChanged();
+                clearCommand.OnCanExecuteChanged();
+                clearOneCommand.OnCanExecuteChanged();
+                OnPropertyChanged();
+            }
+        }
+
+        private decimal _priceSUM;
+        public decimal PriceSum
+        {
+            get
+            {
+                return _priceSUM;
+            }
+            set
+            {
+                _priceSUM = value;
+                OnPropertyChanged();
+            }
+        }
+        private int _productquantity;
+        public int ProductQuantity
+        {
+            get
+            {
+                return _productquantity;
+            }
+            set
+            {
+                _productquantity = value;
+                OnPropertyChanged();
+            }
+        }
 
         //lists
         private ObservableCollection<Product> _listOfProducts = new ObservableCollection<Product>();
@@ -40,20 +83,19 @@ namespace WpfApp1.ViewModel
 
             }
         }
-        private string _screenValue;
-        public string ScreenValue
+        private ObservableCollection<Product> _listOfAddProduct = new ObservableCollection<Product>();
+        public ObservableCollection<Product> ListOfAddProduct
         {
             get
             {
-                return _screenValue;
+                return _listOfAddProduct;
             }
             set
             {
-                _screenValue = value;
-                showNumberCommand.OnCanExecuteChanged();
-                clearCommand.OnCanExecuteChanged();
-                clearOneCommand.OnCanExecuteChanged();
+                _listOfAddProduct = value;
+                addToListCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
+
             }
         }
 
@@ -73,6 +115,7 @@ namespace WpfApp1.ViewModel
             clearCommand = new ClearCommand(this);
             clearOneCommand = new ClearOneCommand(this);
             LoadProductsCommand.Execute(0);
+            addToListCommand = new AddToListCommand(this);
 
         }
 

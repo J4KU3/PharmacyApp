@@ -86,6 +86,7 @@
     <Compile Include="Commands\LoadUsers.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\LogoutCommand.cs" />
+    <Compile Include="Commands\MainAppCommands\AddToListCommand.cs" />
     <Compile Include="Commands\MainAppCommands\ClearCommand.cs" />
     <Compile Include="Commands\MainAppCommands\ClearOneCommand.cs" />
     <Compile Include="Commands\MainAppCommands\ShowNumberCommand.cs" />

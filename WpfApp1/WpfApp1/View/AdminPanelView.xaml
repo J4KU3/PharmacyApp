@@ -13,8 +13,6 @@
     </UserControl.DataContext>
     <Grid Background="AliceBlue">
         <Label Content="Admin Panel" FontSize="30" Margin="66,84,300,207"/>
-        <Image Source="{Binding ProductToShow.product_img}" HorizontalAlignment="Left" Height="290" Margin="420,114,0,0" VerticalAlignment="Top" Width="269"/>
-        <TextBlock HorizontalAlignment="Left" Margin="189,343,0,0" TextWrapping="Wrap" Text="{Binding ProductToShow.product_name}" VerticalAlignment="Top"/>
-
+        
     </Grid>
 </UserControl>
