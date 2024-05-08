@@ -16,6 +16,19 @@ namespace WpfApp1.ViewModel
         //Views
         private readonly LoginViewModel loginViewModel;
         //Propertis
+        private bool _isAdmin;
+        public bool IsAdmin
+        {
+            get
+            {
+                return _isAdmin;
+            }
+            set
+            {
+                _isAdmin = value;
+                OnPropertyChanged();
+            }
+        }
         private BaseViewModel _currentView;
         public BaseViewModel CurrentView
         {
@@ -42,7 +55,7 @@ namespace WpfApp1.ViewModel
         public MainViewModel()
         {
             CurrentView = new MainAppPanelViewModel();
-            loginViewModel = new LoginViewModel();
+           
             navigationCommand = new NavigationCommand(this);
             closeWindowCommand = new CloseWindowCommand(this);
             logoutCommand = new LogoutCommand(this);

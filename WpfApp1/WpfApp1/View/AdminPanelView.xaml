@@ -12,7 +12,63 @@
         <VM:AdminPanelViewModel/>
     </UserControl.DataContext>
     <Grid Background="AliceBlue">
-        <Label Content="Admin Panel" FontSize="30" Margin="66,84,300,207"/>
-        
+        <TabControl Background="AliceBlue" SelectedIndex="{Binding PageNumber}" BorderThickness="0">
+            <TabItem  Header="Home View Admin Panel" Visibility="Hidden">
+                <Grid Background="AliceBlue">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Button Content="Manage Users" Margin="10,10,10,30" Command="{Binding navigationForAdminPanel}" CommandParameter="1"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Button Content="Manage Products" Margin="10,10,10,30" Command="{Binding navigationForAdminPanel}" CommandParameter="2"/>
+                    </Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Users">
+                <Grid Background="AliceBlue">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="333*"/>
+                        <RowDefinition Height="91*"/>
+
+                    </Grid.RowDefinitions>
+
+                    <DataGrid Grid.Row="0" Margin="10,10,9.667,111.333" ItemsSource="{Binding ListOfUsers}" SelectedItem="{Binding SelectedUser}" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding IDUser}"/>
+                            <DataGridTextColumn Header="username" Binding="{Binding UserName}"/>
+                            <DataGridTextColumn Header="First Name" Binding="{Binding FName}"/>
+                            <DataGridTextColumn Header="Last Name" Binding="{Binding LName}"/>
+                            <DataGridTextColumn Header="Phone" Binding="{Binding PhoneNumer}"/>
+                            <DataGridTextColumn Header="Password    " Binding="{Binding UserPassword}"/>
+                            <DataGridCheckBoxColumn Header="Funkcje Admina" Binding="{Binding IsAdmin}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="3" Content="Back" Margin="9.667,10,10,9.667" Command="{Binding navigationForAdminPanel}" CommandParameter="0"/>
+                        <Button Grid.Column="0" Content="Add" Margin="9.667,10,10,9.667"/>
+                        <Button Grid.Column="1" Content="Delete" Margin="9.667,10,10,9.667" Command="{Binding deleteUserCommand}"/>
+                        <Button Grid.Column="2" Content="Edit" Margin="9.667,10,10,9.667" Command="{Binding editUsersCommand}"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Products">
+                <Grid Background="AliceBlue"/>
+            </TabItem>
+
+        </TabControl>
+
+
+
     </Grid>
 </UserControl>

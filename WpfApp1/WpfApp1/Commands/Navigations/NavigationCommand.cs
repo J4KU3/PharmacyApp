@@ -12,30 +12,36 @@ namespace WpfApp1.Commands.Navigations
    public class NavigationCommand:BaseCommand
     {
         private readonly MainViewModel _mainViewModel;
-
+       
+     
         public NavigationCommand(MainViewModel mainViewModel)
         {
             _mainViewModel = mainViewModel;
+            
+            
         }
+        
         public override void Execute(object parameter)
         {
+
             
+                switch (parameter as string)
+                {
+                    case "1":
+                        _mainViewModel.CurrentView = new AdminPanelViewModel();
 
-            switch (parameter as string)
-            {
-                case "1":
-                    _mainViewModel.CurrentView = new AdminPanelViewModel();
-                    
 
-                    break;
-                case "2":
+                        break;
+                    case "2":
 
-                    _mainViewModel.CurrentView = new MainAppPanelViewModel();
-                    
-                    break;
-                default:
-                    break;
-            }
+                        _mainViewModel.CurrentView = new MainAppPanelViewModel();
+
+                        break;
+                    default:
+                        break;
+                }
+            
+            
         }
     }
 }

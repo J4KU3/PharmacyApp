@@ -12,6 +12,8 @@
     <Window.DataContext>
         <VM:MainViewModel/>
     </Window.DataContext>
+
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="187*"/>
@@ -29,9 +31,9 @@
         <Grid Grid.Column="1" Grid.ColumnSpan="1" Margin="7.667,0,0.333,-0.333">
             <ContentControl Content="{Binding CurrentView}">
                 <ContentControl.Resources>
-                    <DataTemplate DataType="{x:Type VM:MainViewModel}">
+                    <!--<DataTemplate DataType="{x:Type VM:MainViewModel}">
                         <views:MainView />
-                    </DataTemplate>
+                    </DataTemplate>-->
                     <DataTemplate DataType="{x:Type VM:AdminPanelViewModel}">
                         <views:AdminPanelView />
                     </DataTemplate>

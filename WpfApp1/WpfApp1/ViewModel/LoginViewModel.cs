@@ -14,7 +14,7 @@ namespace WpfApp1.ViewModel
     public class LoginViewModel:BaseViewModel
     {
         //Views
-        private readonly MainViewModel _mainviewModel;
+        
         //komendy
         public LoginCommand loginCommand { get;  }
         public LoadUsers loadUsersFromData { get; }
@@ -45,12 +45,15 @@ namespace WpfApp1.ViewModel
             set
             {
                 _isViewVisible = value;
+                loginCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
 
 
         //zmienne 
+     
+        
         private Users _user;
         public Users LoginUser
         {
@@ -73,7 +76,7 @@ namespace WpfApp1.ViewModel
 
         public LoginViewModel()
         {
-          
+            
             loginCommand = new LoginCommand(this);
             loadUsersFromData = new LoadUsers(this);
             loadUsersFromData.Execute(0);

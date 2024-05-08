@@ -20,9 +20,10 @@ namespace WpfApp1.ViewModel
         public ShowNumberCommand showNumberCommand { get; }
         public ClearCommand clearCommand { get; }
         public AddToListCommand addToListCommand { get; }
-        
         public ClearOneCommand clearOneCommand { get; }
+        public DeleteProductFromListCommand deleteProductFromListCommand { get; }
         //Properties
+
         private string _screenValue;
         public string ScreenValue
         {
@@ -36,6 +37,7 @@ namespace WpfApp1.ViewModel
                 showNumberCommand.OnCanExecuteChanged();
                 clearCommand.OnCanExecuteChanged();
                 clearOneCommand.OnCanExecuteChanged();
+                addToListCommand.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -63,6 +65,20 @@ namespace WpfApp1.ViewModel
             set
             {
                 _productquantity = value;
+                OnPropertyChanged();
+            }
+        }
+        private Product _selectedProduct;
+
+        public Product SelectedProduct
+        {
+            get
+            {
+                return _selectedProduct;
+            }
+            set
+            {
+                _selectedProduct = value;
                 OnPropertyChanged();
             }
         }
@@ -110,13 +126,13 @@ namespace WpfApp1.ViewModel
         }
         public MainAppPanelViewModel()
         {
-           
+            _selectedProduct = new Product();
             showNumberCommand = new ShowNumberCommand(this);
             clearCommand = new ClearCommand(this);
             clearOneCommand = new ClearOneCommand(this);
             LoadProductsCommand.Execute(0);
             addToListCommand = new AddToListCommand(this);
-
+            deleteProductFromListCommand = new DeleteProductFromListCommand(this);
         }
 
 

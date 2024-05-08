@@ -17,6 +17,10 @@ namespace WpfApp1.Commands.MainAppCommands
         {
             _mainAppPanelViewModel = mainAppPanelViewModel;
         }
+        public override bool CanExecute(object parameter)
+        {
+            return _mainAppPanelViewModel.ScreenValue != null && _mainAppPanelViewModel.ScreenValue.Length != 0;
+        }
 
         public override void Execute(object parameter)
         {
@@ -34,7 +38,8 @@ namespace WpfApp1.Commands.MainAppCommands
                 else
                 {
                     _mainAppPanelViewModel.ListOfAddProduct.Add(foud);
-                    _mainAppPanelViewModel.PriceSum += foud.product_price;
+                    _mainAppPanelViewModel.PriceSum += Convert.ToDecimal(string.Format("{0:0.00}", foud.product_price)); ;
+                    
                 }
                 
                 _mainAppPanelViewModel.clearCommand.Execute(0);

@@ -14,11 +14,11 @@ namespace WpfApp1.Commands
     {
         private readonly LoginViewModel _loginViewModel;
        
-        
+
         public LoginCommand(LoginViewModel loginViewModel)
         {
             _loginViewModel = loginViewModel;
-           
+            
         }
         public override bool CanExecute(object parameter)
         {
@@ -34,10 +34,15 @@ namespace WpfApp1.Commands
                 {
                     var employeMail = _loginViewModel.LoginUser.UserName;
                     var employePass = _loginViewModel.LoginUser.UserPassword;
+                   
                     var found = _loginViewModel.ListOfUsers.FirstOrDefault(x => x.UserName == employeMail && x.UserPassword == employePass);
+                   
                     if (found != null)
                     {
+                        
+                       
                         _loginViewModel.IsViewVisible = false;
+                      
                     }
                     else
                     {
