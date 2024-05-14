@@ -18,7 +18,7 @@ namespace WpfApp1.ViewModel
         //komendy
         public LoginCommand loginCommand { get;  }
         public LoadUsers loadUsersFromData { get; }
-        public LogoutCommand logoutCommand { get; }
+        
         //listy
         private ObservableCollection<Users> _listOfUsers = new ObservableCollection<Users>();
 

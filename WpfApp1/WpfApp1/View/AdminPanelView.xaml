@@ -56,14 +56,56 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Button Grid.Column="3" Content="Back" Margin="9.667,10,10,9.667" Command="{Binding navigationForAdminPanel}" CommandParameter="0"/>
-                        <Button Grid.Column="0" Content="Add" Margin="9.667,10,10,9.667"/>
+                        <Button Grid.Column="0" Content="Add" Margin="9.667,10,10,9.667" Command="{Binding navigationForAdminPanel}" CommandParameter="3"/>
                         <Button Grid.Column="1" Content="Delete" Margin="9.667,10,10,9.667" Command="{Binding deleteUserCommand}"/>
                         <Button Grid.Column="2" Content="Edit" Margin="9.667,10,10,9.667" Command="{Binding editUsersCommand}"/>
                     </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Products">
-                <Grid Background="AliceBlue"/>
+                <Grid Background="AliceBlue">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="333*"/>
+                        <RowDefinition Height="91*"/>
+
+                    </Grid.RowDefinitions>
+
+                    <DataGrid Grid.Row="0" Margin="10,10,9.667,111.333" ItemsSource="{Binding ListOfProducts}" SelectedItem="{Binding SelectedProduct }" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn  Header="">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding product_img}" Width="50" Height="50"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="ID" Binding="{Binding product_id}"/>
+                            <DataGridTextColumn Header="Name" Binding="{Binding product_name}"/>
+                            <DataGridTextColumn Header="Price" Binding="{Binding product_price}"/>
+                            <DataGridTextColumn Header="Quantity" Binding="{Binding product_quantity}"/>
+                            
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="3" Content="Back" Margin="9.667,10,10,9.667" Command="{Binding navigationForAdminPanel}" CommandParameter="0"/>
+                        <Button Grid.Column="0" Content="Add" Margin="9.667,10,10,9.667" Command="{Binding navigationForAdminPanel}" CommandParameter="4"/>
+                        <Button Grid.Column="1" Content="Delete" Margin="9.667,10,10,9.667" Command="{Binding deleteProduct}"/>
+                        <Button Grid.Column="2" Content="Edit" Margin="9.667,10,10,9.667" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="AddUser">
+                
+            </TabItem>
+            <TabItem Header="Product">
+
             </TabItem>
 
         </TabControl>

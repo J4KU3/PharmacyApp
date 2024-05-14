@@ -54,7 +54,7 @@ namespace WpfApp1.ViewModel
         //Construktor 
         public MainViewModel()
         {
-            CurrentView = new MainAppPanelViewModel();
+            CurrentView = new HomeViewModel();
            
             navigationCommand = new NavigationCommand(this);
             closeWindowCommand = new CloseWindowCommand(this);

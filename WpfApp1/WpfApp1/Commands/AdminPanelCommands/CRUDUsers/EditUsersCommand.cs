@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WpfApp1.ViewModel;
 using WpfApp1.Data;
+using System.Windows;
 
 namespace WpfApp1.Commands.AdminPanelCommands.CRUDUsers
 {
@@ -24,15 +25,25 @@ namespace WpfApp1.Commands.AdminPanelCommands.CRUDUsers
             using (var resource = new PharmacyAppDataBaseEntities())
             {
                 var UserToEdit = resource.Users.FirstOrDefault(x=>x.IDUser == _viewModel.SelectedUser.IDUser);
-                var EditedUser = _viewModel.SelectedUser;
-                UserToEdit.FName = EditedUser.FName;
-                UserToEdit.LName = EditedUser.LName;
-                UserToEdit.PhoneNumer = EditedUser.PhoneNumer;
-                UserToEdit.UserName = EditedUser.UserName;
-                UserToEdit.UserPassword = EditedUser.UserPassword;
-                UserToEdit.IsAdmin = EditedUser.IsAdmin;
-                resource.SaveChanges();
-                _viewModel.LoadUsersCommand.Execute(0);
+                if (UserToEdit.UserName == "Admin")
+                {
+                    MessageBox.Show("Access Denied");
+                    _viewModel.SelectedUser = null;
+                    _viewModel.LoadUsersCommand.Execute(0);
+                }
+                else
+                {
+                    var EditedUser = _viewModel.SelectedUser;
+                    UserToEdit.FName = EditedUser.FName;
+                    UserToEdit.LName = EditedUser.LName;
+                    UserToEdit.PhoneNumer = EditedUser.PhoneNumer;
+                    UserToEdit.UserName = EditedUser.UserName;
+                    UserToEdit.UserPassword = EditedUser.UserPassword;
+                    UserToEdit.IsAdmin = EditedUser.IsAdmin;
+                    resource.SaveChanges();
+                    _viewModel.LoadUsersCommand.Execute(0);
+                }
+                
 
             }
         }

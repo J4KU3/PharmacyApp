@@ -10,6 +10,7 @@ using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using WpfApp1.Commands.Navigations;
 using WpfApp1.Commands.AdminPanelCommands.CRUDUsers;
+using WpfApp1.Commands.AdminPanelCommands.CRUDProduct;
 
 namespace WpfApp1.ViewModel
 {
@@ -42,6 +43,21 @@ namespace WpfApp1.ViewModel
                 _selectedUser = value;
                 deleteUserCommand.OnCanExecuteChanged();
                 editUsersCommand.OnCanExecuteChanged();
+                OnPropertyChanged();
+            }
+        }
+
+        private Product _selectedProduct;
+        public Product SelectedProduct
+        {
+            get
+            {
+                return _selectedProduct;
+            }
+            set
+            {
+                _selectedProduct = value;
+                deleteProduct.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -79,6 +95,8 @@ namespace WpfApp1.ViewModel
         public NavigationForAdminPanel navigationForAdminPanel { get; }
         public DeleteUserCommand deleteUserCommand { get; }
         public EditUsersCommand editUsersCommand { get; }
+
+        public DeleteProduct deleteProduct { get; }
         private void LoadProducts()
         {
             using (var context = new PharmacyAppDataBaseEntities())
@@ -109,7 +127,8 @@ namespace WpfApp1.ViewModel
             LoadUsers();
             navigationForAdminPanel = new NavigationForAdminPanel(this);
             deleteUserCommand = new DeleteUserCommand(this);
-            editUsersCommand = new EditUsersCommand(this);  
+            editUsersCommand = new EditUsersCommand(this);
+            deleteProduct = new DeleteProduct(this);
             
         }
     }

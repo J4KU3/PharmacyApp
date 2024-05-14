@@ -30,14 +30,16 @@ namespace WpfApp1.Commands.Navigations
                     case "1":
                         _mainViewModel.CurrentView = new AdminPanelViewModel();
 
-
                         break;
                     case "2":
-
                         _mainViewModel.CurrentView = new MainAppPanelViewModel();
 
                         break;
-                    default:
+                case "3":
+                    _mainViewModel.CurrentView = new HomeViewModel();
+
+                    break;
+                default:
                         break;
                 }
             
