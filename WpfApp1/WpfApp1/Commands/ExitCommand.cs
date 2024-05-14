@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfApp1.View;
 using WpfApp1.ViewModel;
 
 namespace WpfApp1.Commands
 {
-    public class CloseWindowCommand : BaseCommand
+   public class ExitCommand:BaseCommand
     {
-        private readonly LoginView _mainLoginView;
-        public CloseWindowCommand(LoginView mainLoginView)
+        private readonly MainViewModel _mainViewModel;
+
+        public ExitCommand(MainViewModel mainViewModel)
         {
-            _mainLoginView = mainLoginView;
+            _mainViewModel = mainViewModel;
         }
         public override void Execute(object parameter)
         {
-            _mainLoginView.Close();
+            App.Current.Shutdown();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using WpfApp1.View;
 using WpfApp1.ViewModel;
+using WpfApp1.Data;
 
 namespace WpfApp1.Commands.Navigations
 {
@@ -28,7 +29,14 @@ namespace WpfApp1.Commands.Navigations
                 switch (parameter as string)
                 {
                     case "1":
+                    if (_mainViewModel.IsAdmin!=false)
+                    {
                         _mainViewModel.CurrentView = new AdminPanelViewModel();
+                    }
+                    else
+                    {
+                        _mainViewModel.CurrentView = new HomeViewModel();
+                    }
 
                         break;
                     case "2":
@@ -45,5 +53,6 @@ namespace WpfApp1.Commands.Navigations
             
             
         }
+    
     }
 }

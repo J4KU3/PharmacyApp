@@ -8,18 +8,8 @@
         mc:Ignorable="d"
         Title="Login" Height="475.19" Width="349.172">
     <Window.DataContext>
-        <VM:LoginViewModel/>
+        <VM:MainViewModel/>
     </Window.DataContext>
-
-    <Window.Resources>
-        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
-    </Window.Resources>
-
-    <Window.Visibility>
-        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
-    </Window.Visibility>
-
-
 
     <Grid Background="#FF9A9898">
         <Grid.RowDefinitions>

@@ -20,13 +20,12 @@
             <ColumnDefinition Width="606*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Margin="0,0,0.333,-0.333">
-            <Button Content="Admin" Margin="10,77,10,0" VerticalAlignment="Top" Command="{Binding navigationCommand}" CommandParameter="1" Height="43"/>
+            <Button Content="Admin" Margin="10,77,10,0" VerticalAlignment="Top" Command="{Binding navigationCommand}" CommandParameter="1" Height="43" IsEnabled="{Binding IsAdmin}"/>
             <Button Content="MainPanel" Margin="10,125,10,0" VerticalAlignment="Top" Height="51" Command="{Binding navigationCommand}" CommandParameter="2"/>
             <Button Content="Logout" Margin="9,0,11,61" VerticalAlignment="Bottom" Height="46" Command="{Binding logoutCommand}"/>
-            <Button Content="ShutDown" Margin="9,0,10,10" VerticalAlignment="Bottom" Height="46" Command="{Binding closeWindowCommand}"/>
+            <Button Content="ShutDown" Margin="9,0,10,10" VerticalAlignment="Bottom" Height="46" Command="{Binding exitCommand}"/>
             <Button Content="Find Product" Margin="10,181,11,0" VerticalAlignment="Top" Height="46"/>
             <Button Content="Home" Margin="10,29,9,0" VerticalAlignment="Top" Command="{Binding navigationCommand}" CommandParameter="3" Height="43"/>
-
         </Grid>
         <Grid Grid.Column="1" Grid.ColumnSpan="1" Margin="7.667,0,0.333,-0.333">
             <ContentControl Content="{Binding CurrentView}">

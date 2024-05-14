@@ -12,12 +12,12 @@ namespace WpfApp1.Commands
 {
     public class LoginCommand : BaseCommand
     {
-        private readonly LoginViewModel _loginViewModel;
+        private readonly MainViewModel _mainViewModel;
        
 
-        public LoginCommand(LoginViewModel loginViewModel)
+        public LoginCommand(MainViewModel mainViewModel)
         {
-            _loginViewModel = loginViewModel;
+            _mainViewModel = mainViewModel;
             
         }
         public override bool CanExecute(object parameter)
@@ -27,27 +27,35 @@ namespace WpfApp1.Commands
         public override void Execute(object parameter)
         {
             
-            if (_loginViewModel.LoginUser.UserName != null && _loginViewModel.LoginUser.UserPassword != null)
+            if (_mainViewModel.LoginUser.UserName != null && _mainViewModel.LoginUser.UserPassword != null)
             {
 
                 using (var Employees = new PharmacyAppDataBaseEntities())
                 {
-                    var employeMail = _loginViewModel.LoginUser.UserName;
-                    var employePass = _loginViewModel.LoginUser.UserPassword;
+                    var employeMail = _mainViewModel.LoginUser.UserName;
+                    var employePass = _mainViewModel.LoginUser.UserPassword;
                    
-                    var found = _loginViewModel.ListOfUsers.FirstOrDefault(x => x.UserName == employeMail && x.UserPassword == employePass);
+                    var found = _mainViewModel.ListOfUsers.FirstOrDefault(x => x.UserName == employeMail && x.UserPassword == employePass);
                    
                     if (found != null)
                     {
-                        
-                       
-                        _loginViewModel.IsViewVisible = false;
-                      
+                        var admin = found.IsAdmin.GetValueOrDefault();
+                        _mainViewModel.IsAdmin = admin;
+
+                        // Ustawienie właściwego widoku po zalogowaniu
+                        _mainViewModel.CurrentView = new HomeViewModel();
+
+                        var mainWindow = new MainView();
+                        mainWindow.DataContext = _mainViewModel;
+                        mainWindow.Show();
+
+
+                        _mainViewModel.closeWindowCommand.Execute(0);
                     }
                     else
                     {
                         
-                        _loginViewModel.IsViewVisible = true;
+                        
                         MessageBox.Show("zostały podane błędne dane");
                     }
                    

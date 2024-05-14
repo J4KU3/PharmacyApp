@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using WpfApp1.Commands.Navigations;
 using WpfApp1.View;
+using WpfApp1.ViewModel;
 
 namespace WpfApp1
 {
@@ -20,17 +21,9 @@ namespace WpfApp1
         protected void ApplicationStart(object sender, StartupEventArgs args)
         {
             var loginView = new LoginView();
+            var loginViewModel = new MainViewModel();
+            loginView.DataContext = loginViewModel;
             loginView.Show();
-            loginView.IsVisibleChanged += (s, ev) =>
-            {
-                if (loginView.IsVisible == false && loginView.IsLoaded)
-                {
-                    var MainVie = new MainView();
-                    
-                    MainVie.Show();
-                    loginView.Close();
-                }
-            };
 
 
 

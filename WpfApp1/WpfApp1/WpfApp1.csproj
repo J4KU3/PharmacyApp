@@ -87,6 +87,7 @@
     <Compile Include="Commands\AdminPanelCommands\CRUDUsers\DeleteUserCommand.cs" />
     <Compile Include="Commands\AdminPanelCommands\CRUDUsers\EditUsersCommand.cs" />
     <Compile Include="Commands\CloseWindowCommand.cs" />
+    <Compile Include="Commands\ExitCommand.cs" />
     <Compile Include="Commands\LoadUsers.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\LogoutCommand.cs" />

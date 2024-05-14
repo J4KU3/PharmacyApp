@@ -11,8 +11,8 @@ namespace WpfApp1.Commands
 {
     public class LoadUsers : BaseCommand
     {
-        private readonly LoginViewModel _loginViewModel;
-        public LoadUsers(LoginViewModel loginViewModel)
+        private readonly MainViewModel _loginViewModel;
+        public LoadUsers(MainViewModel loginViewModel)
         {
             _loginViewModel = loginViewModel;
         }
