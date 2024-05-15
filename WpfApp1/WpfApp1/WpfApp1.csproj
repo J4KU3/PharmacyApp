@@ -82,6 +82,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\AdminPanelCommands\CRUDProduct\AddUserCommand.cs" />
     <Compile Include="Commands\AdminPanelCommands\CRUDProduct\DeleteProduct.cs" />
     <Compile Include="Commands\AdminPanelCommands\CRUDProduct\EditProduct.cs" />
     <Compile Include="Commands\AdminPanelCommands\CRUDUsers\DeleteUserCommand.cs" />

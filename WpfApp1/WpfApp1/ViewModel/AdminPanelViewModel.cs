@@ -17,6 +17,20 @@ namespace WpfApp1.ViewModel
     public class AdminPanelViewModel:BaseViewModel
     {
         //Properties
+        private Users _newUser;
+        public Users NewUser
+        {
+            get
+            {
+                return _newUser;
+            }
+            set
+            {
+                _newUser = value;
+                addUserCommand.OnCanExecuteChanged();
+                OnPropertyChanged();
+            }
+        }
         private int _pageNumber;
         public int PageNumber
         {
@@ -58,6 +72,7 @@ namespace WpfApp1.ViewModel
             {
                 _selectedProduct = value;
                 deleteProduct.OnCanExecuteChanged();
+                editProduct.OnCanExecuteChanged();
                 OnPropertyChanged();
             }
         }
@@ -97,6 +112,8 @@ namespace WpfApp1.ViewModel
         public EditUsersCommand editUsersCommand { get; }
 
         public DeleteProduct deleteProduct { get; }
+        public EditProduct editProduct { get; }
+        public AddUserCommand addUserCommand { get; }
         private void LoadProducts()
         {
             using (var context = new PharmacyAppDataBaseEntities())
@@ -120,7 +137,7 @@ namespace WpfApp1.ViewModel
 
         public AdminPanelViewModel()
         {
-            
+            _newUser = new Users();
             LoadProductsCommand = new RelayCommand(LoadProducts);
             LoadUsersCommand = new RelayCommand(LoadUsers);
             LoadProducts();
@@ -129,6 +146,8 @@ namespace WpfApp1.ViewModel
             deleteUserCommand = new DeleteUserCommand(this);
             editUsersCommand = new EditUsersCommand(this);
             deleteProduct = new DeleteProduct(this);
+            editProduct = new EditProduct(this);
+            addUserCommand = new AddUserCommand(this);
             
         }
     }
