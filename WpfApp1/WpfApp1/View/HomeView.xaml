@@ -6,7 +6,9 @@
              xmlns:local="clr-namespace:WpfApp1.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="AliceBlue">
-            
+    <Grid Background="White">
+
+        <Image Source="/WpfApp1;component/Images/CashImage.png" Width="Auto" Height="Auto"/>
+        <Label Content="PharmacyCashApp" Margin="0,0,10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="40" Height="64" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>

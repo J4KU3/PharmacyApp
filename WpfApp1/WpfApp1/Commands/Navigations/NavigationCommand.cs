@@ -43,8 +43,12 @@ namespace WpfApp1.Commands.Navigations
                         _mainViewModel.CurrentView = new MainAppPanelViewModel();
 
                         break;
-                case "3":
+                     case "3":
                     _mainViewModel.CurrentView = new HomeViewModel();
+
+                         break;
+                    case "4":
+                    _mainViewModel.CurrentView = new FindProductViewModel();
 
                     break;
                 default:

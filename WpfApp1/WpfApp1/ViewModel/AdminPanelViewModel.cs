@@ -31,6 +31,50 @@ namespace WpfApp1.ViewModel
                 OnPropertyChanged();
             }
         }
+        private Product _newProduct;
+        public Product NewProduct
+        {
+            get
+            {
+                return _newProduct;
+            }
+            set
+            {
+                _newProduct = value;
+                addProductCommand.OnCanExecuteChanged();
+                OnPropertyChanged();
+            }
+        }
+        private string _imageLocation;
+        public string ImageLocation
+        {
+            get
+            {
+                return _imageLocation;
+
+            }
+            set
+            {
+                _imageLocation = value;
+                findPictureCommand.OnCanExecuteChanged();
+                addProductCommand.OnCanExecuteChanged();
+                OnPropertyChanged();
+            }
+        }
+        private Category _selectedCategory;
+        public Category SelectedCategory
+        {
+            get
+            {
+                return _selectedCategory;
+            }
+            set
+            {
+                _selectedCategory = value;
+                addProductCommand.OnCanExecuteChanged();
+                OnPropertyChanged();
+            }
+        }
         private int _pageNumber;
         public int PageNumber
         {
@@ -77,6 +121,20 @@ namespace WpfApp1.ViewModel
             }
         }
         //Lists
+        private ObservableCollection<Category> _listOfCategories = new ObservableCollection<Category>();
+
+        public ObservableCollection<Category> ListOfCategories
+        {
+            get
+            {
+                return _listOfCategories;
+            }
+            set
+            {
+                _listOfCategories = value;
+                OnPropertyChanged(nameof(ListOfCategories));
+            }
+        }
         private ObservableCollection<Product> _listOfProducts = new ObservableCollection<Product>();
 
         public ObservableCollection<Product> ListOfProducts
@@ -114,13 +172,17 @@ namespace WpfApp1.ViewModel
         public DeleteProduct deleteProduct { get; }
         public EditProduct editProduct { get; }
         public AddUserCommand addUserCommand { get; }
+        public FindPictureCommand findPictureCommand { get; }
+        public AddProductCommand addProductCommand { get; }
         private void LoadProducts()
         {
             using (var context = new PharmacyAppDataBaseEntities())
             {
                 List<Product> productList = context.Product.ToList();
                 ListOfProducts = new ObservableCollection<Product>(productList);
-               
+                
+
+
             }
         }
         public RelayCommand LoadProductsCommand { get; private set; }
@@ -135,20 +197,37 @@ namespace WpfApp1.ViewModel
         }
         public RelayCommand LoadUsersCommand { get; private set; }
 
+        private void LoadCategories()
+        {
+            using (var context = new PharmacyAppDataBaseEntities())
+            {
+                List<Category> CategoryList = context.Category.ToList();
+                ListOfCategories = new ObservableCollection<Category>(CategoryList);
+                
+
+
+            }
+        }
+        public RelayCommand LoadCategoriesCommand { get; private set; }
+
         public AdminPanelViewModel()
         {
             _newUser = new Users();
+            _newProduct = new Product();
             LoadProductsCommand = new RelayCommand(LoadProducts);
             LoadUsersCommand = new RelayCommand(LoadUsers);
+            LoadCategoriesCommand = new RelayCommand(LoadCategories);
             LoadProducts();
             LoadUsers();
+            LoadCategories();
             navigationForAdminPanel = new NavigationForAdminPanel(this);
             deleteUserCommand = new DeleteUserCommand(this);
             editUsersCommand = new EditUsersCommand(this);
             deleteProduct = new DeleteProduct(this);
             editProduct = new EditProduct(this);
             addUserCommand = new AddUserCommand(this);
-            
+            findPictureCommand = new FindPictureCommand(this);
+            addProductCommand = new AddProductCommand(this);
         }
     }
 }

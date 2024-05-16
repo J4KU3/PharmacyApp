@@ -84,6 +84,7 @@
                             <DataGridTextColumn Header="Price" Binding="{Binding product_price, StringFormat={}{0:F2}}"/>
                             <DataGridTextColumn Header="Quantity" Binding="{Binding product_quantity}"/>
 
+
                         </DataGrid.Columns>
                     </DataGrid>
 
@@ -101,7 +102,7 @@
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="AddUser">
+            <TabItem Header="AddUser" Visibility="Hidden">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="155*"/>
@@ -133,14 +134,69 @@
                         <Button Grid.Column="0" Content="Add" Margin="23" Command="{Binding addUserCommand}"/>
                         <Button Grid.Column="1" Content="Back" Margin="23" Command="{Binding navigationForAdminPanel}" CommandParameter="1"/>
                     </Grid>
-                    <Label Content="Add New User" Height="100" Width="100" Margin="14,-29,682,239" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
 
                 </Grid>
 
 
             </TabItem>
-            <TabItem Header="Product">
+            <TabItem Header="Product" Visibility="Hidden">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="155*"/>
+                        <RowDefinition Height="57*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Content="Add" Margin="23" Command="{Binding addProductCommand}" />
+                        <Button Grid.Column="1" Content="Back" Margin="23" Command="{Binding navigationForAdminPanel}" CommandParameter="2"/>
+                    </Grid>
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
 
+                        <ComboBox Grid.Row="3" ItemsSource="{Binding ListOfCategories}" Margin="253,10" SelectedItem="{Binding SelectedCategory}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock>
+                                                 <Run Text="ID"/>
+                                                 <Run Text="{Binding category_id}"/>
+                                        </TextBlock>
+                                        <TextBlock Text=" "/>
+                                        <TextBlock Margin="0,0,10,0">
+                                                <Run Text="name:"/>
+                                                <Run Text="{Binding category_name}"/>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <TextBox Grid.Row="0"  Margin="253,10" TextWrapping="Wrap" Text="{Binding NewProduct.product_name}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox Grid.Row="1" Margin="253,10" TextWrapping="Wrap" Text="{Binding NewProduct.product_price}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox Grid.Row="2" Margin="253,10" TextWrapping="Wrap" Text="{Binding NewProduct.product_quantity}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+                        <Grid Grid.Row="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="559*"/>
+                                <ColumnDefinition Width="237*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="{Binding ImageLocation}" Margin="10,10,9.667,10" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <Button Content="Find Image" HorizontalAlignment="Left" Margin="10.333,5,0,5" Grid.Column="1" Width="98" Command="{Binding findPictureCommand}"/>
+                        </Grid>
+
+
+
+                    </Grid>
+                </Grid>
             </TabItem>
 
 

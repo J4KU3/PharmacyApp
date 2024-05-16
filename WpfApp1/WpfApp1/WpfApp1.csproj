@@ -82,13 +82,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Commands\AdminPanelCommands\CRUDProduct\AddUserCommand.cs" />
+    <Compile Include="Commands\AdminPanelCommands\CRUDProduct\AddProductCommand.cs" />
+    <Compile Include="Commands\AdminPanelCommands\CRUDProduct\FindPictureCommand.cs" />
+    <Compile Include="Commands\AdminPanelCommands\CRUDUsers\AddUserCommand.cs" />
     <Compile Include="Commands\AdminPanelCommands\CRUDProduct\DeleteProduct.cs" />
     <Compile Include="Commands\AdminPanelCommands\CRUDProduct\EditProduct.cs" />
     <Compile Include="Commands\AdminPanelCommands\CRUDUsers\DeleteUserCommand.cs" />
     <Compile Include="Commands\AdminPanelCommands\CRUDUsers\EditUsersCommand.cs" />
     <Compile Include="Commands\CloseWindowCommand.cs" />
     <Compile Include="Commands\ExitCommand.cs" />
+    <Compile Include="Commands\FindProductViewCommands\FindProductCommand.cs" />
     <Compile Include="Commands\LoadUsers.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\LogoutCommand.cs" />
@@ -128,12 +131,16 @@
     </Compile>
     <Compile Include="ViewModel\AdminPanelViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\FindProductViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainAppPanelViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\AdminPanelView.xaml.cs">
       <DependentUpon>AdminPanelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FindProductView.xaml.cs">
+      <DependentUpon>FindProductView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -157,6 +164,10 @@
     </Compile>
     <Compile Include="Commands\BaseCommand.cs" />
     <Page Include="View\AdminPanelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FindProductView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -225,6 +236,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\CashImage.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -45,6 +45,11 @@ namespace WpfApp1.Commands.AdminPanelCommands.CRUDProduct
                 else
                 {
                     MessageBox.Show("Error");
+                    UserFromUI.UserName = null;
+                    UserFromUI.FName = null;
+                    UserFromUI.LName = null;
+                    UserFromUI.PhoneNumer = null;
+                    UserFromUI.UserPassword = null;
                 }
 
 
