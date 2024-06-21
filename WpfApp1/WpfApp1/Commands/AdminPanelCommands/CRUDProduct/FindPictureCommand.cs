@@ -21,7 +21,7 @@ namespace WpfApp1.Commands.AdminPanelCommands.CRUDProduct
         public override void Execute(object parameter)
         {
             OpenFileDialog openFile = new OpenFileDialog();
-
+            openFile.Filter = "Image Files (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png|All files (*.*)|*.*";
             if (openFile.ShowDialog() == true)
             {
                 _adminPanelViewModel.ImageLocation = openFile.FileName;

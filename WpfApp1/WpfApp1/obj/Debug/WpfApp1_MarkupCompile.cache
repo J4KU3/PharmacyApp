@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\App.xaml
-7-1121338906
+111313470740
 2-747231112
 45432348983
-127864719833
-Dictionaries\LoginDictionary.xaml;View\AdminPanelView.xaml;View\FindProductView.xaml;View\HomeView.xaml;View\LoginView.xaml;View\MainAppPanelView.xaml;View\MainView.xaml;
+128-2072392882
+Dictionaries\AdminPanelDictionary.xaml;Dictionaries\FindProductPageDictionary.xaml;Dictionaries\LoginDictionary.xaml;Dictionaries\MainPageButtonDictionary.xaml;Dictionaries\MainPanelDictionary.xaml;View\AdminPanelView.xaml;View\FindProductView.xaml;View\HomeView.xaml;View\LoginView.xaml;View\MainAppPanelView.xaml;View\MainView.xaml;
 
 False
 

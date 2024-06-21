@@ -46,9 +46,12 @@ namespace WpfApp1.Commands
                         _mainViewModel.CurrentView = new HomeViewModel();
 
                         var mainWindow = new MainView();
+
                         mainWindow.DataContext = _mainViewModel;
                         mainWindow.Show();
-
+                        mainWindow.WindowState = WindowState.Maximized;
+                        mainWindow.ResizeMode = ResizeMode.NoResize;
+                        
 
                         _mainViewModel.closeWindowCommand.Execute(0);
                     }

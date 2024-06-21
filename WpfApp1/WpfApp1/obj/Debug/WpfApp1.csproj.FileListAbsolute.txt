@@ -43,3 +43,7 @@ C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug
 C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\View\HomeView.baml
 C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\View\FindProductView.g.cs
 C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\View\FindProductView.baml
+C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\Dictionaries\AdminPanelDictionary.baml
+C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\Dictionaries\FindProductPageDictionary.baml
+C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\Dictionaries\MainPageButtonDictionary.baml
+C:\Users\kuba2\OneDrive\Pulpit\PharmacyApp\PharmacyApp\WpfApp1\WpfApp1\obj\Debug\Dictionaries\MainPanelDictionary.baml

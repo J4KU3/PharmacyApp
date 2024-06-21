@@ -20,15 +20,15 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <Button Content="Manage Users" Margin="10,10,10,30" Command="{Binding navigationForAdminPanel}" CommandParameter="1"/>
+                        <Button Style="{StaticResource AdminButtonStyle}" Content="Manage Users" Margin="40,76" Command="{Binding navigationForAdminPanel}" CommandParameter="1"/>
                     </Grid>
                     <Grid Grid.Column="1">
-                        <Button Content="Manage Products" Margin="10,10,10,30" Command="{Binding navigationForAdminPanel}" CommandParameter="2"/>
+                        <Button Style="{StaticResource AdminButtonStyle}" Content="Manage Products" Margin="40,76" Command="{Binding navigationForAdminPanel}" CommandParameter="2"/>
                     </Grid>
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Users" Visibility="Hidden">
+            <TabItem Header="Users" >
                 <Grid Background="AliceBlue">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="333*"/>
@@ -55,14 +55,14 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="3" Content="Back" Margin="9.667,10,10,9.667" Command="{Binding navigationForAdminPanel}" CommandParameter="0"/>
-                        <Button Grid.Column="0" Content="Add" Margin="9.667,10,10,9.667" Command="{Binding navigationForAdminPanel}" CommandParameter="3"/>
-                        <Button Grid.Column="1" Content="Delete" Margin="9.667,10,10,9.667" Command="{Binding deleteUserCommand}"/>
-                        <Button Grid.Column="2" Content="Edit" Margin="9.667,10,10,9.667" Command="{Binding editUsersCommand}"/>
+                        <Button Style="{StaticResource AdminButtonStyle}" Grid.Column="3" Content="Back" Margin="9.667,10,10,9.667" Command="{Binding navigationForAdminPanel}" CommandParameter="0"/>
+                        <Button Style="{StaticResource AdminButtonStyle}" Grid.Column="0" Content="Add" Margin="9.667,10,10,9.667" Command="{Binding navigationForAdminPanel}" CommandParameter="3"/>
+                        <Button Style="{StaticResource AdminButtonStyle}" Grid.Column="1" Content="Delete" Margin="9.667,10,10,9.667" Command="{Binding deleteUserCommand}"/>
+                        <Button Style="{StaticResource AdminButtonStyle}" Grid.Column="2" Content="Edit" Margin="9.667,10,10,9.667" Command="{Binding editUsersCommand}"/>
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Products" Visibility="Hidden">
+            <TabItem Header="Products" >
                 <Grid Background="AliceBlue">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="333*"/>
@@ -95,14 +95,14 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="3" Content="Back" Margin="9.667,10,10,9.667" Command="{Binding navigationForAdminPanel}" CommandParameter="0"/>
-                        <Button Grid.Column="0" Content="Add" Margin="9.667,10,10,9.667" Command="{Binding navigationForAdminPanel}" CommandParameter="4"/>
-                        <Button Grid.Column="1" Content="Delete" Margin="9.667,10,10,9.667" Command="{Binding deleteProduct}"/>
-                        <Button Grid.Column="2" Content="Edit" Margin="9.667,10,10,9.667" Command="{Binding editProduct}" />
+                        <Button Style="{StaticResource AdminButtonStyle}" Grid.Column="3" Content="Back" Margin="9.667,10,10,9.667" Command="{Binding navigationForAdminPanel}" CommandParameter="0"/>
+                        <Button Style="{StaticResource AdminButtonStyle}" Grid.Column="0" Content="Add" Margin="9.667,10,10,9.667" Command="{Binding navigationForAdminPanel}" CommandParameter="4"/>
+                        <Button Style="{StaticResource AdminButtonStyle}" Grid.Column="1" Content="Delete" Margin="9.667,10,10,9.667" Command="{Binding deleteProduct}"/>
+                        <Button Style="{StaticResource AdminButtonStyle}" Grid.Column="2" Content="Edit" Margin="9.667,10,10,9.667" Command="{Binding editProduct}" />
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="AddUser" Visibility="Hidden">
+            <TabItem Header="AddUser" Visibility="Hidden" >
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="155*"/>
@@ -118,11 +118,11 @@
 
                         </Grid.RowDefinitions>
 
-                        <TextBox Grid.Row="0" Margin="229,10,305,10" TextWrapping="Wrap" Text="{Binding NewUser.UserName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                        <TextBox Grid.Row="1" Margin="230,10,304,10" TextWrapping="Wrap" Text="{Binding NewUser.FName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                        <TextBox Grid.Row="2" Margin="230,10,304,10" TextWrapping="Wrap" Text="{Binding NewUser.LName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                        <TextBox Grid.Row="3" Margin="230,10,304,10" TextWrapping="Wrap" Text="{Binding NewUser.UserPassword}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                        <TextBox Grid.Row="4" Margin="230,10,304,10" TextWrapping="Wrap" Text="{Binding NewUser.PhoneNumer}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox Tag="UserName" Style="{StaticResource AdminTextBoxStyle}" Grid.Row="0" Margin="229,10,305,10" TextWrapping="Wrap" Text="{Binding NewUser.UserName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox Tag="Fist Name" Style="{StaticResource AdminTextBoxStyle}" Grid.Row="1" Margin="230,10,304,10" TextWrapping="Wrap" Text="{Binding NewUser.FName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox Tag="Last Name" Style="{StaticResource AdminTextBoxStyle}" Grid.Row="2" Margin="230,10,304,10" TextWrapping="Wrap" Text="{Binding NewUser.LName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox Tag="Password" Style="{StaticResource AdminTextBoxStyle}" Grid.Row="3" Margin="230,10,304,10" TextWrapping="Wrap" Text="{Binding NewUser.UserPassword}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox Tag="Phone Number" Style="{StaticResource AdminTextBoxStyle}" Grid.Row="4" Margin="230,10,304,10" TextWrapping="Wrap" Text="{Binding NewUser.PhoneNumer}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
 
                     </Grid>
@@ -131,8 +131,8 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Content="Add" Margin="23" Command="{Binding addUserCommand}"/>
-                        <Button Grid.Column="1" Content="Back" Margin="23" Command="{Binding navigationForAdminPanel}" CommandParameter="1"/>
+                        <Button Style="{StaticResource AdminButtonStyle}" Grid.Column="0" Content="Add" Margin="40" Command="{Binding addUserCommand}" />
+                        <Button Style="{StaticResource AdminButtonStyle}" Grid.Column="1" Content="Back" Margin="40,40,40,40" Command="{Binding navigationForAdminPanel}" CommandParameter="1" />
                     </Grid>
 
 
@@ -140,7 +140,7 @@
 
 
             </TabItem>
-            <TabItem Header="Product" Visibility="Hidden">
+            <TabItem Header="Product" Visibility="Hidden" >
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="155*"/>
@@ -151,10 +151,14 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Content="Add" Margin="23" Command="{Binding addProductCommand}" />
-                        <Button Grid.Column="1" Content="Back" Margin="23" Command="{Binding navigationForAdminPanel}" CommandParameter="2"/>
+                        <Button Style="{StaticResource AdminButtonStyle}" Grid.Column="0" Content="Add" Margin="40" Command="{Binding addProductCommand}" />
+                        <Button Style="{StaticResource AdminButtonStyle}" Grid.Column="1" Content="Back" Margin="40" Command="{Binding navigationForAdminPanel}" CommandParameter="2"/>
                     </Grid>
                     <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="72*"/>
+                            <ColumnDefinition Width="127*"/>
+                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
@@ -163,7 +167,7 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
 
-                        <ComboBox Grid.Row="3" ItemsSource="{Binding ListOfCategories}" Margin="253,10" SelectedItem="{Binding SelectedCategory}">
+                        <ComboBox Style="{StaticResource AdminComboBox}" Grid.Row="3" ItemsSource="{Binding ListOfCategories}" Margin="253,10" SelectedItem="{Binding SelectedCategory}" Grid.ColumnSpan="2">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -180,17 +184,17 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
-                        <TextBox Grid.Row="0"  Margin="253,10" TextWrapping="Wrap" Text="{Binding NewProduct.product_name}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                        <TextBox Grid.Row="1" Margin="253,10" TextWrapping="Wrap" Text="{Binding NewProduct.product_price}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                        <TextBox Grid.Row="2" Margin="253,10" TextWrapping="Wrap" Text="{Binding NewProduct.product_quantity}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox Tag="Product Name" Style="{StaticResource AdminTextBoxStyle}" Grid.Row="0"  Margin="253,10" TextWrapping="Wrap" Text="{Binding NewProduct.product_name}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <TextBox Tag="Product Price" Style="{StaticResource AdminTextBoxStyle}" Grid.Row="1" Margin="253,10" TextWrapping="Wrap" Text="{Binding NewProduct.product_price}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                        <TextBox Tag="Quantity" Style="{StaticResource AdminTextBoxStyle}" Grid.Row="2" Margin="253,10" TextWrapping="Wrap" Text="{Binding NewProduct.product_quantity}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
 
-                        <Grid Grid.Row="4">
+                        <Grid Grid.Row="4" Grid.ColumnSpan="2">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="559*"/>
-                                <ColumnDefinition Width="237*"/>
+                                <ColumnDefinition Width="144*"/>
+                                <ColumnDefinition Width="55*"/>
                             </Grid.ColumnDefinitions>
-                            <Label Content="{Binding ImageLocation}" Margin="10,10,9.667,10" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-                            <Button Content="Find Image" HorizontalAlignment="Left" Margin="10.333,5,0,5" Grid.Column="1" Width="98" Command="{Binding findPictureCommand}"/>
+                            <Label Tag="Image Location" Style="{StaticResource AdminLabelStyle}" Content="{Binding ImageLocation}" Margin="254,10,0,10" Grid.Column="0" />
+                            <Button Style="{StaticResource AdminButtonStyle1}" Content="Find Image" HorizontalAlignment="Left" Margin="38,5,0,5" Grid.Column="1" Width="98" Command="{Binding findPictureCommand}"/>
                         </Grid>
 
 

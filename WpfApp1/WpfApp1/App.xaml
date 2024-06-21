@@ -1,13 +1,19 @@
-﻿<Application x:Class="WpfApp1.App"
+﻿<Application
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WpfApp1"
+             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="WpfApp1.App"
              Startup="ApplicationStart">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Dictionaries\LoginDictionary.xaml"/>
+                <ResourceDictionary Source="Dictionaries\AdminPanelDictionary.xaml"/>
+                <ResourceDictionary Source="Dictionaries\FindProductPageDictionary.xaml"/>
+                <ResourceDictionary Source="Dictionaries\MainPageButtonDictionary.xaml"/>
+                <ResourceDictionary Source="Dictionaries\MainPanelDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+          
         </ResourceDictionary>
     </Application.Resources>
 

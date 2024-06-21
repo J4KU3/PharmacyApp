@@ -17,7 +17,7 @@
             <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
 
-        <DataGrid Margin="10,10,10.333,10" ItemsSource="{Binding ListOfProducts}"  AutoGenerateColumns="False" CanUserAddRows="False" >
+        <DataGrid Margin="10,10,10.333,10" ItemsSource="{Binding ListOfProducts}"  AutoGenerateColumns="False" CanUserAddRows="False" Style="{DynamicResource DataGridStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle2}" RowStyle="{DynamicResource DataGridRowStyle1}" >
             <DataGrid.Columns>
                 <DataGridTemplateColumn  Header="">
                     <DataGridTemplateColumn.CellTemplate>
@@ -36,8 +36,8 @@
         </DataGrid>
 
         <Grid Margin="0,0,4.333,0" Grid.Column="1">
-            <TextBox Height="57" Margin="10,38,10.334,0" TextWrapping="Wrap" Text="{Binding ProductToFind.product_name}" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Button Content="Search" Margin="10,100,10.334,0" VerticalAlignment="Top" Height="37" Command="{Binding findProductCommand}"/>
+            <TextBox Tag="Product Name" Style="{StaticResource FindTextBoxStyle}" Height="57" Margin="10,38,10.334,0" TextWrapping="Wrap" Text="{Binding ProductToFind.product_name}" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Style="{StaticResource SearchButtonStyle}" Content="Search" Margin="10,100,10.334,0" VerticalAlignment="Top" Height="41" Command="{Binding findProductCommand}"/>
 
         </Grid>
     </Grid>
